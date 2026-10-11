@@ -182,6 +182,121 @@ This exercise provides foundational experience with data organization and manipu
 
 ---
 
+## Assignment 1
+
+### Instructions
+
+1. All due times are in EST.
+2. Upload Python files to the Blackboard Assignment.
+3. All answers must be in your own words. Copy-and-paste answers will receive no credit.
+4. You must submit `.py` files to be graded.
+5. You are limited to 2 submissions.
+6. If you cannot submit the assignment by the due date, you may still submit it within two days with a 25% penalty.
+7. Any submissions after two days of the assignment deadline will receive a grade of zero.
+
+---
+
+### What Your Programs Have to Do
+
+#### Task 1 – Calculate Protein Molecular Weight
+
+Given an average molecular weight of **110 Daltons per amino acid**, write a Python program that calculates the estimated molecular weight of the *Rattus norvegicus* PKC Beta-1 protein in **kilodaltons** and writes the result to the screen.
+
+Hard-code the protein sequence by copying and pasting it into a variable in your program.
+
+Hard coding is a general programming practice where a constant value is assigned directly in the code and the program refers to that value for processing.
+
+Call your program:
+
+```text
+calc_daltons.py
+```
+
+#### Hint
+
+To remove newline characters from the protein sequence:
+
+```python
+protein_sequence = protein_sequence.replace('\r', '').replace('\n', '')
+```
+
+#### Output Example
+
+```text
+The length of "Protein kinase C beta type" is: 671
+The average weight of this protein sequence in kilodaltons
+is: 73.81
+```
+
+---
+
+### Task 2 – Processing DNA
+
+There is a sample of several DNA sequences, one per line.
+
+Each sequence starts with the same **14-base-pair fragment**, which represents a sequencing adapter that should have been removed.
+
+Write a Python program that will:
+
+1. Trim the 14-base sequencing adapter from each sequence.
+2. Write the cleaned sequences to the screen.
+3. Print the length of each cleaned sequence to the screen.
+4. Hard-code the DNA sequences as a **list of strings**.
+5. Use a **loop** to process the sequences.
+
+#### DNA Sequences
+
+```text
+ATTCGATTATAAGCTCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATC
+ATTCGATTATAAGCACTGATCGATCGATCGATCGATCGATGCTATCGTCGT
+ATTCGATTATAAGCATCGATCACGATCTATCGTACGTATGCATATCGATATCGATCGTAGTC
+ATTCGATTATAAGCACTATCGATGATCTAGCTACGATCGTAGCTGTA
+ATTCGATTATAAGCACTAGCTAGTCTCGATGCATGATCAGCTTAGCTGATGATGCTATGCA
+```
+
+---
+
+### Task 3 – Generating Random DNA Sequences
+
+Generate a random DNA string that is **1001 bases long** and store it in a string variable.
+
+To generate the sequence:
+
+1. Use a list containing the four nucleotides.
+2. Use the `random` module in Python.
+3. Use the `random.randint()` function to randomly select nucleotides.
+4. Store the generated sequence in a string variable.
+5. Print the generated DNA sequence.
+6. Calculate the percentage of each of the four nucleotides:
+   - A
+   - T
+   - C
+   - G
+7. Print the percentages of all four nucleotides.
+8. Run the program several times.
+
+#### Question
+
+Do you get the same random DNA sequence every time you run the program?
+
+Answer this question using a **comment inside your Python code**.
+
+---
+
+### Submission Requirements
+
+Your submission should contain Python `.py` files for each required program.
+
+Make sure that:
+
+- Variables have meaningful names.
+- Indentation is used correctly.
+- Required loops are included.
+- Output is clearly printed to the screen.
+- Required comments are included in the code.
+
+---
+
 ## 🛠️ Technical Skills Developed
 
 | Category | Skills |

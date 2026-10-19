@@ -182,6 +182,86 @@ This exercise provides foundational experience with data organization and manipu
 
 ---
 
+## 🧪 Lab 3: Dynamic Laboratory Protocol and Error Handling
+
+### 1. Dynamic Protocol Calculator
+
+**File:** `dynamic_protocol.py`
+
+#### Objective
+
+Modify an existing Python laboratory protocol program to allow users to dynamically calculate the volumes of stock solutions required to prepare a solution with specified final concentrations.
+
+The program must replace hard-coded values with interactive user inputs and implement error handling to manage invalid inputs.
+
+#### Methodology
+
+The program prompts the user to enter five values:
+
+1. Final volume of the solution (mL).
+2. NaCl stock concentration (mM).
+3. NaCl desired final concentration (mM).
+4. MgCl2 stock concentration (mM).
+5. MgCl2 desired final concentration (mM).
+
+The required volume of each stock solution is calculated using the dilution equation:
+
+**C₁V₁ = C₂V₂**
+
+Rearranging to calculate the volume of stock solution:
+
+**V₁ = (C₂ × V₂) / C₁**
+
+Where:
+
+- **C₁:** Stock concentration
+- **V₁:** Volume of stock solution required
+- **C₂:** Desired final concentration
+- **V₂:** Final solution volume
+
+The program calculates the required volumes of NaCl and MgCl2 and provides instructions for preparing the final solution.
+
+The script also implements a `try/except` structure to handle at least two types of errors:
+
+- **ValueError:** Occurs when the user enters a non-numeric value.
+- **ZeroDivisionError:** Occurs when a stock concentration of zero causes division by zero.
+
+#### Example Input and Output
+
+```text
+Please enter the final volume of the solution (ml): 3
+Please enter the NaCl stock (mM): 1000
+Please enter the NaCl final (mM): 10
+Please enter the MgCl2 stock (mM): 100
+Please enter the MgCl2 final (mM): 0.5
+
+Add 0.03 ml NaCl
+Add 0.015 ml MgCl2
+Add water to a final volume of 3.0 ml and mix
+```
+
+#### Programming Concepts
+
+- Variable assignment
+- Interactive user input using `input()`
+- Numeric conversion using `float()`
+- Mathematical calculations
+- Functions and program modification
+- Exception handling using `try/except`
+- Handling `ValueError` and `ZeroDivisionError`
+- Dynamic input processing
+- Formatted output using `print()`
+
+#### Bioinformatics and Laboratory Relevance
+
+Accurate dilution calculations are essential in molecular biology, biochemistry, and laboratory research.
+
+This exercise demonstrates how Python can automate experimental protocol calculations while allowing researchers to modify reagent concentrations and solution volumes without changing the source code.
+
+Implementing exception handling also improves the reliability of laboratory software by preventing invalid inputs from causing unexpected program failures.
+
+---
+
 ## Assignment 1
 
 ### Instructions
@@ -283,20 +363,6 @@ Answer this question using a **comment inside your Python code**.
 
 ---
 
-### Submission Requirements
-
-Your submission should contain Python `.py` files for each required program.
-
-Make sure that:
-
-- Variables have meaningful names.
-- Indentation is used correctly.
-- Required loops are included.
-- Output is clearly printed to the screen.
-- Required comments are included in the code.
-
----
-
 ## 🛠️ Technical Skills Developed
 
 | Category | Skills |
@@ -323,6 +389,141 @@ Through these assignments, I have gained practical experience in:
 5. Using Python data structures to perform common data management operations.
 
 These foundational skills support my continued development in bioinformatics, computational biology, and clinical data analysis.
+
+---
+
+## 🧬 Lab 4: DNA Pattern Searching and Reverse Complement Analysis
+
+### 1. Searching for DNA Sequence Patterns
+
+**Suggested File:** `Lab_4_DNAPatternSearch.py`
+
+#### Objective
+
+Develop a Python program that identifies a specific nucleotide pattern within a DNA sequence.
+
+The program must search both the forward DNA strand and its reverse complementary strand to determine whether the target pattern is present.
+
+The program must also report the position of the detected pattern and distinguish between sequences containing the pattern and those without a match.
+
+#### Target DNA Pattern
+
+```text
+TATAxxxATGxxxT
+```
+
+Where:
+
+- **TATA:** A fixed four-nucleotide sequence.
+- **xxx:** Any three consecutive DNA nucleotides (A, T, C, or G).
+- **ATG:** A fixed three-nucleotide sequence.
+- **T:** A fixed final nucleotide.
+
+The complete target pattern contains 14 nucleotides.
+
+An example of a valid matching sequence is:
+
+```text
+TATAACGATGGCAT
+```
+
+#### Methodology
+
+The program searches DNA sequences for the specified nucleotide pattern using string operations and pattern-matching techniques.
+
+The implementation can be divided into two primary functions:
+
+**1. Reverse Complement Function**
+
+A function generates the reverse complementary strand of a DNA sequence by applying nucleotide base-pairing rules and reversing the resulting sequence.
+
+| Original Base | Complementary Base |
+|---------------|--------------------|
+| A (Adenine) | T (Thymine) |
+| T (Thymine) | A (Adenine) |
+| C (Cytosine) | G (Guanine) |
+| G (Guanine) | C (Cytosine) |
+
+**2. DNA Pattern Search Function**
+
+A second function searches a DNA sequence for the target pattern:
+
+```text
+TATAxxxATGxxxT
+```
+
+The program must ensure that:
+
+- The fixed nucleotide regions appear in the correct order.
+- Each `xxx` region contains exactly three valid DNA nucleotides.
+- The pattern is searched on both the forward and reverse complementary strands.
+- The position of each detected pattern is reported.
+
+#### Test Cases
+
+The program must demonstrate three different scenarios.
+
+**Test Case 1: Pattern Present in the Forward Strand**
+
+Use a DNA sequence containing the target pattern in its forward orientation.
+
+Expected behavior:
+
+- Identify the pattern in the forward strand.
+- Print a message confirming the match.
+- Display the position where the pattern begins.
+
+**Test Case 2: Pattern Present in the Reverse Complementary Strand**
+
+Use a DNA sequence whose reverse complement contains the target pattern.
+
+Expected behavior:
+
+- Generate the reverse complementary sequence.
+- Identify the pattern in the reverse complement.
+- Print a message confirming the match.
+- Display the position of the pattern.
+
+**Test Case 3: Pattern Not Present**
+
+Use a DNA sequence that does not contain the target pattern in either orientation.
+
+Expected behavior:
+
+- Search the forward DNA strand.
+- Search the reverse complementary strand.
+- Print a message indicating that no matching pattern was found.
+
+#### Programming Concepts
+
+- Python functions using `def`
+- Function parameters and return values
+- String manipulation
+- DNA sequence representation
+- String slicing and indexing
+- Reverse complementary DNA generation
+- Pattern matching and sequence searching
+- Conditional statements using `if/else`
+- Iteration through nucleotide sequences
+- Test case development
+- Formatted output using `print()`
+
+#### Bioinformatics Relevance
+
+Identifying specific nucleotide patterns is a fundamental task in bioinformatics and computational genomics.
+
+Searching both DNA orientations is particularly important because biologically relevant sequences may occur on either strand of double-stranded DNA.
+
+This exercise introduces concepts used in:
+
+- DNA motif identification
+- Regulatory sequence analysis
+- Promoter region identification
+- Gene sequence analysis
+- Sequence annotation
+- Computational genomics
+
+By combining pattern matching, reverse complement analysis, and reusable functions, the program demonstrates how Python can automate the identification of biologically relevant sequence features.
 
 ---
 

@@ -531,12 +531,6 @@ By combining pattern matching, reverse complement analysis, and reusable functio
 
 `NM_Lab_5_Translating_DNA.py` accepts a DNA sequence, validates its bases, transcribes DNA to RNA, and translates RNA codons into a protein sequence using a codon table. Assertions cover valid and invalid bases, lowercase input, stop codons, incomplete codons, and empty input.
 
-### Additional Python Notes
-
-- `Pandas_Notes.py` contains concise notes on Pandas.
-- `Python_for_Bioinformatics_Notes.py` contains course notes.
-- `variables_and_datatypes.py` records Python fundamentals.
-
 ---
 
 ## 🚀 Future Development

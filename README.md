@@ -527,6 +527,18 @@ By combining pattern matching, reverse complement analysis, and reusable functio
 
 ---
 
+## 🧪 Lab 5: DNA Transcription and Translation
+
+`NM_Lab_5_Translating_DNA.py` accepts a DNA sequence, validates its bases, transcribes DNA to RNA, and translates RNA codons into a protein sequence using a codon table. Assertions cover valid and invalid bases, lowercase input, stop codons, incomplete codons, and empty input.
+
+### Additional Python Notes
+
+- `Pandas_Notes.py` contains concise notes on Pandas.
+- `Python_for_Bioinformatics_Notes.py` contains course notes.
+- `variables_and_datatypes.py` records Python fundamentals.
+
+---
+
 ## 🚀 Future Development
 
 This repository will continue to expand as I progress through the course.
@@ -546,3 +558,4 @@ Future additions will include:
 Clinical Bioinformatics | Humber Polytechnic
 
 **Research Interests:** Bioinformatics, Computational Biology, Cancer Genomics, and Biomedical Data Analysis
+

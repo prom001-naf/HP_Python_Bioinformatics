@@ -452,7 +452,7 @@ TATAxxxATGxxxT
 The program must ensure that:
 
 - The fixed nucleotide regions appear in the correct order.
-- Each `xxx` region contains exactly three valid DNA nucleotides.
+- The `xxx` positions represent variable bases. The submitted script checks the fixed motif positions and does not separately validate the variable bases.
 - The pattern is searched on both the forward and reverse complementary strands.
 - The position of each detected pattern is reported.
 

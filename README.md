@@ -74,12 +74,6 @@ Since the user provides volume in millilitres, the program must convert it to li
 - Unit conversion
 - Formatted output using `print()`
 
-#### Bioinformatics and Laboratory Relevance
-
-Preparing solutions with accurate concentrations is fundamental to molecular biology and laboratory research.
-
-This exercise demonstrates how Python can automate routine scientific calculations, reducing the need for manual computation.
-
 ---
 
 ### 2. Complementary DNA Sequence
@@ -116,17 +110,6 @@ The exercise focuses on using Python string manipulation to replace nucleotides 
 - DNA sequence representation
 - Sequential operations
 - String immutability
-
-#### Bioinformatics Relevance
-
-DNA sequence manipulation is a foundational task in computational biology.
-
-Understanding nucleotide complementarity is important for applications involving:
-
-- DNA sequence analysis
-- Primer design
-- Sequence alignment
-- Molecular genetics
 
 ---
 
@@ -185,12 +168,6 @@ This exercise introduces basic data management operations using a simulated heal
 - Boolean expressions
 - User input processing
 - String splitting using `split()`
-
-#### Healthcare Data Relevance
-
-Managing patient records introduces essential concepts used in healthcare informatics and clinical data processing.
-
-This exercise provides foundational experience with data organization and manipulation, which can later be extended to structured clinical datasets and database systems.
 
 *Note: The patient records used in this exercise are fictional and intended for educational purposes.*
 
@@ -266,54 +243,41 @@ Add water to a final volume of 3.0 ml and mix
 - Dynamic input processing
 - Formatted output using `print()`
 
-#### Bioinformatics and Laboratory Relevance
+---
 
-Accurate dilution calculations are essential in molecular biology, biochemistry, and laboratory research.
+## 📝 Assignment 1: Python Programming Fundamentals and Sequence Analysis
 
-This exercise demonstrates how Python can automate experimental protocol calculations while allowing researchers to modify reagent concentrations and solution volumes without changing the source code.
+### Assignment Overview
 
-Implementing exception handling also improves the reliability of laboratory software by preventing invalid inputs from causing unexpected program failures.
+This assignment introduces Python programming through protein sequence calculations, DNA sequence processing, and random sequence generation.
+
+The assignment source implements all three tasks in one script. The [Python source](assignments/assignment_01/assignment_01_calc_daltons.py) and [assignment brief](assignments/assignment_01/assignment_01_brief.pdf) are included in the repository.
+
+The assignment focuses on three main areas:
+
+1. Protein sequence length and molecular-weight calculation
+2. Trimming a fixed adapter from DNA sequences
+3. Generating random DNA and calculating nucleotide percentages
 
 ---
 
-## Assignment 1
+### 1. Calculate Protein Molecular Weight
 
-**Files:** [assignment source](assignments/assignment_01/assignment_01_calc_daltons.py) and [assignment brief](assignments/assignment_01/assignment_01_brief.pdf).
+**File:** [assignment source](assignments/assignment_01/assignment_01_calc_daltons.py)
 
-### Instructions
+#### Objective
 
-1. All due times are in EST.
-2. Upload Python files to the Blackboard Assignment.
-3. All answers must be in your own words. Copy-and-paste answers will receive no credit.
-4. You must submit `.py` files to be graded.
-5. You are limited to 2 submissions.
-6. If you cannot submit the assignment by the due date, you may still submit it within two days with a 25% penalty.
-7. Any submissions after two days of the assignment deadline will receive a grade of zero.
+Estimate the molecular weight in kilodaltons of the *Rattus norvegicus* PKC Beta-1 protein using an average of 110 Daltons per amino acid.
 
----
+#### Methodology
 
-### What Your Programs Have to Do
-
-#### Task 1 – Calculate Protein Molecular Weight
-
-Given an average molecular weight of **110 Daltons per amino acid**, write a Python program that calculates the estimated molecular weight of the *Rattus norvegicus* PKC Beta-1 protein in **kilodaltons** and writes the result to the screen.
-
-Hard-code the protein sequence by copying and pasting it into a variable in your program.
-
-Hard coding is a general programming practice where a constant value is assigned directly in the code and the program refers to that value for processing.
-
-Call your program:
-
-```text
-calc_daltons.py
-```
-
-#### Hint
-
-To remove newline characters from the protein sequence:
+The protein sequence is stored as a multiline string. Newline characters are removed before calculating sequence length. The script multiplies the number of amino acids by 110 Daltons and divides by 1,000 to convert Daltons to kilodaltons.
 
 ```python
-protein_sequence = protein_sequence.replace('\r', '').replace('\n', '')
+protein_sequence = protein_sequence.replace("\r", "").replace("\n", "")
+protein_length = len(protein_sequence)
+molecular_weight = protein_length * 110
+molecular_weight_kda = molecular_weight / 1000
 ```
 
 #### Output Example
@@ -324,58 +288,75 @@ The average weight of this protein sequence in kilodaltons
 is: 73.81
 ```
 
+#### Programming Concepts
+
+- Multiline strings
+- String replacement and length calculation
+- Variables and arithmetic operations
+- Unit conversion
+- Formatted output using `print()`
+
 ---
 
-### Task 2 – Processing DNA
+### 2. Trim DNA Adapter Sequences
 
-There is a sample of several DNA sequences, one per line.
+**File:** [assignment source](assignments/assignment_01/assignment_01_calc_daltons.py)
 
-Each sequence starts with the same **14-base-pair fragment**, which represents a sequencing adapter that should have been removed.
+#### Objective
 
-Write a Python program that will:
+Remove the shared 14-base-pair sequencing adapter from each DNA sequence, then display each cleaned sequence and its length.
 
-1. Trim the 14-base sequencing adapter from each sequence.
-2. Write the cleaned sequences to the screen.
-3. Print the length of each cleaned sequence to the screen.
-4. Hard-code the DNA sequences as a **list of strings**.
-5. Use a **loop** to process the sequences.
+#### Methodology
 
-#### DNA Sequences
+The five input sequences are stored in a list. A loop processes each sequence, uses slicing to remove its first 14 bases, and prints the remaining sequence and its length.
 
-```text
-ATTCGATTATAAGCTCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATC
-ATTCGATTATAAGCACTGATCGATCGATCGATCGATCGATGCTATCGTCGT
-ATTCGATTATAAGCATCGATCACGATCTATCGTACGTATGCATATCGATATCGATCGTAGTC
-ATTCGATTATAAGCACTATCGATGATCTAGCTACGATCGTAGCTGTA
-ATTCGATTATAAGCACTAGCTAGTCTCGATGCATGATCAGCTTAGCTGATGATGCTATGCA
+```python
+adapter_length = 14
+
+for sequence in dna_sequences:
+    trimmed_sequence = sequence[adapter_length:]
+    print("Trimmed sequence:", trimmed_sequence)
+    print("Length:", len(trimmed_sequence))
 ```
 
+#### Programming Concepts
+
+- Lists of strings
+- `for` loops
+- String slicing
+- Sequence length with `len()`
+- Repeated output for each input sequence
+
 ---
 
-### Task 3 – Generating Random DNA Sequences
+### 3. Generate Random DNA Sequences
 
-Generate a random DNA string that is **1001 bases long** and store it in a string variable.
+**File:** [assignment source](assignments/assignment_01/assignment_01_calc_daltons.py)
 
-To generate the sequence:
+#### Objective
 
-1. Use a list containing the four nucleotides.
-2. Use the `random` module in Python.
-3. Use the `random.randint()` function to randomly select nucleotides.
-4. Store the generated sequence in a string variable.
-5. Print the generated DNA sequence.
-6. Calculate the percentage of each of the four nucleotides:
-   - A
-   - T
-   - C
-   - G
-7. Print the percentages of all four nucleotides.
-8. Run the program several times.
+Generate a random DNA sequence that is 1,001 bases long and report the percentage of each nucleotide.
 
-#### Question
+#### Methodology
 
-Do you get the same random DNA sequence every time you run the program?
+The script selects nucleotides from a list containing A, T, C, and G using `random.randint()`. It appends 1,001 randomly selected bases to a string, counts each nucleotide, and calculates each percentage relative to the sequence length. A code comment answers whether repeated runs produce the same sequence.
 
-Answer this question using a **comment inside your Python code**.
+#### Programming Concepts
+
+- Importing and using the `random` module
+- Lists and indexed selection
+- Loops and string concatenation
+- Counting characters with `str.count()`
+- Calculating percentages
+- Rounding and displaying results
+
+---
+
+### Assignment Instructions
+
+- Submit Python source files through the course assignment portal.
+- Write answers in your own words.
+- The brief allows up to two submissions and specifies its late-submission policy.
 
 ---
 
@@ -524,40 +505,119 @@ Expected behavior:
 - Test case development
 - Formatted output using `print()`
 
-#### Bioinformatics Relevance
-
-Identifying specific nucleotide patterns is a fundamental task in bioinformatics and computational genomics.
-
-Searching both DNA orientations is particularly important because biologically relevant sequences may occur on either strand of double-stranded DNA.
-
-This exercise introduces concepts used in:
-
-- DNA motif identification
-- Regulatory sequence analysis
-- Promoter region identification
-- Gene sequence analysis
-- Sequence annotation
-- Computational genomics
-
-By combining pattern matching, reverse complement analysis, and reusable functions, the program demonstrates how Python can automate the identification of biologically relevant sequence features.
-
 ---
 
 ## 🧪 Lab 5: DNA Transcription and Translation
 
-[`dna_transcription_translation.py`](labs/lab_05/dna_transcription_translation.py) accepts a DNA sequence, validates its bases, transcribes DNA to RNA, and translates RNA codons into a protein sequence using a codon table.
+### DNA Sequence Transcription and Translation
+
+**Files:** [Python source](labs/lab_05/dna_transcription_translation.py) and [lab brief](labs/lab_05/lab_05_brief.pdf).
+
+#### Objective
+
+Complete a program that accepts a DNA sequence, validates its bases, transcribes it to RNA, and translates the RNA codons into an amino-acid sequence.
+
+#### Methodology
+
+The program converts the input to uppercase, checks that each DNA base is A, C, G, or T, and replaces T with U to transcribe DNA to RNA. It processes the RNA sequence in triplets and looks up each codon in a codon table. Stop codons are represented by `*`. Invalid bases and incomplete or unmapped codons produce an error message.
+
+The source defines a `test_functions()` function with assertions for valid and lowercase DNA, empty input, invalid bases, valid amino-acid translation, stop codons, incomplete codons, and missing codon-table entries. Call `test_functions()` explicitly to run those assertions.
+
+#### Example Input and Output
+
+For the input DNA sequence `ATGGCT`, the program transcribes `AUGGCU` and reports the protein sequence `MA`.
+
+#### Programming Concepts
+
+- Function definitions, parameters, and return values
+- String normalization and validation
+- DNA-to-RNA transcription
+- Codon-table lookup
+- Iteration over sequence triplets
+- Exception handling for missing codons
+- Assertions for function checks
+
+---
 
 ## 🧪 Lab 6: Eukaryote Genome Data Analysis
 
 **Files:** [analysis script](labs/lab_06/eukaryotes_analysis.py), [input dataset](labs/lab_06/data/eukaryotes.tsv), and [lab brief](labs/lab_06/lab_06_brief.pdf).
 
-The script loads genome metadata with pandas, summarizes dataset structure and missingness, applies genome-size and protein-to-gene filters, and reports large fungal genomes.
+#### Objective
+
+Use pandas to inspect a tab-separated eukaryote genome dataset, filter records, calculate protein-to-gene ratios, and identify fungal species with larger genomes.
+
+#### Methodology
+
+The script reads the TSV with explicit text and nullable-integer column types and treats `-` as a missing value. It reports sample rows, data types, dimensions, and missingness before completing three analyses:
+
+1. Create `euk_float` from rows with `Size (Mb)` below 4,000, then drop rows containing missing values.
+2. Create `euk_filtered` for records with a positive gene count and at least 1.1 proteins per gene.
+3. List distinct fungal species or assembly labels with genome sizes greater than 100 Mb.
+
+The dataset is loaded from the lab folder by default. An alternate TSV path can be supplied as the first command-line argument. The script reports 2,365 complete rows for Part A, 547 rows for Part B, and 57 fungal species or assembly labels for Part C.
+
+#### Example Command
+
+```bash
+python eukaryotes_analysis.py
+```
+
+To use another TSV file:
+
+```bash
+python eukaryotes_analysis.py path/to/eukaryotes.tsv
+```
+
+#### Programming Concepts
+
+- Reading tab-separated data with `pandas.read_csv()`
+- Explicit data types and missing-value handling
+- DataFrame inspection and summary methods
+- Boolean filtering and missing-value removal
+- Calculating ratios with aligned Series
+- Selecting, deduplicating, and sorting values
+- Command-line arguments with `sys.argv`
+
+---
 
 ## 🧪 Lab 7: Accession-Name Pattern Matching
 
-**Files:** [regular-expression script](labs/lab_07/accession_name_patterns.py) and [lab brief](labs/lab_07/lab_07_brief.pdf).
+**Files:** [Python source](labs/lab_07/accession_name_patterns.py) and [lab brief](labs/lab_07/lab_07_brief.pdf).
 
-The exercise uses regular expressions to detect digits, ordered character matches, and accession suffix patterns.
+#### Objective
+
+Use Python regular expressions to select made-up gene accession names that match five independent criteria.
+
+#### Accession Names
+
+```text
+xkn59438, yhdck2, eihd39d9, chdsye847,
+hedle3455, xjhd53e, 45da, de37dp
+```
+
+#### Tasks and Patterns
+
+| Part | Criterion | Regular Expression |
+|------|-----------|--------------------|
+| A | Contains the digit 5 | `5` |
+| B | Contains d before e, with any number of characters between | `d.*e` |
+| C | Contains d followed by exactly one letter and then e | `d[A-Za-z]e` |
+| D | Contains d and e in either order | `d.*e|e.*d` |
+| E | Ends in d followed by a, r, or p | `d[arp]$` |
+
+Each criterion is processed separately. The script uses `re.search()` to test each accession and prints the matches for that part.
+
+#### Programming Concepts
+
+- Importing and using the `re` module
+- Regular-expression character and sequence patterns
+- Wildcards and repetition
+- Alternation with `|`
+- End-of-string anchors with `$`
+- Iterating through a list and conditional matching
+
+---
 
 ---
 
@@ -579,4 +639,5 @@ Future additions will include:
 Clinical Bioinformatics | Humber Polytechnic
 
 **Research Interests:** Bioinformatics, Computational Biology, Cancer Genomics, and Biomedical Data Analysis
+
 

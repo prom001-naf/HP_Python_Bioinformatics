@@ -19,7 +19,35 @@ labs/lab_01/ through labs/lab_07/
 - [Lab 6 source, brief, and dataset](labs/lab_06/)
 - [Lab 7 source and brief](labs/lab_07/)
 
-Use Python 3 to run the scripts. Lab 6 requires pandas and reads `data/eukaryotes.tsv` by default; an alternate TSV path may be supplied as the first command-line argument. Install pandas with `python -m pip install pandas` if needed.
+## Selected coursework
+
+This is an academic coursework portfolio. The scripts and data files are grouped by assignment or lab; the selected exercises below show the range of programming tasks represented.
+
+| Work | Demonstrated techniques | Files |
+|------|-------------------------|-------|
+| Assignment 1 | Protein length and molecular-weight calculation, DNA adapter trimming, random sequence generation | [Source](assignments/assignment_01/assignment_01_calc_daltons.py) · [Brief](assignments/assignment_01/assignment_01_brief.pdf) |
+| Lab 5 | DNA base validation, transcription, codon translation, and assertion-based function checks | [Source](labs/lab_05/dna_transcription_translation.py) · [Brief](labs/lab_05/lab_05_brief.pdf) |
+| Lab 6 | TSV inspection, missing-value handling, filters, and genome metadata summaries with pandas | [Source](labs/lab_06/eukaryotes_analysis.py) · [Dataset](labs/lab_06/data/eukaryotes.tsv) · [Brief](labs/lab_06/lab_06_brief.pdf) |
+| Lab 7 | Regular-expression matching over accession-like strings | [Source](labs/lab_07/accession_name_patterns.py) · [Brief](labs/lab_07/lab_07_brief.pdf) |
+
+## Running the Scripts
+
+Use Python 3. The scripts use the standard library except Lab 6, which requires pandas. From the repository root:
+
+```bash
+python assignments/assignment_01/assignment_01_calc_daltons.py
+python labs/lab_05/dna_transcription_translation.py
+python labs/lab_06/eukaryotes_analysis.py
+python labs/lab_07/accession_name_patterns.py
+```
+
+Install the Lab 6 dependency if needed:
+
+```bash
+python -m pip install pandas
+```
+
+Lab 6 reads `labs/lab_06/data/eukaryotes.tsv` by default; an alternate TSV path can be supplied as the first command-line argument.
 
 ---
 

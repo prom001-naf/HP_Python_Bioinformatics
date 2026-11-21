@@ -3,9 +3,23 @@
 
 A collection of Python programming labs, assignments, and projects completed as part of the **Clinical Bioinformatics program at Humber Polytechnic**.
 
-This repository documents my progression in learning Python programming, from foundational concepts to their applications in bioinformatics, molecular biology, and healthcare data management.
+This repository documents coursework in Python programming, bioinformatics, molecular biology, and healthcare data management.
 
-As the course progresses, this repository will be updated with additional labs, assignments, and the final course project.
+## Repository organization
+
+Assignments and labs are grouped into numbered folders. Each folder contains the available source, brief, and required input data.
+
+```text
+assignments/assignment_01/
+labs/lab_01/ through labs/lab_07/
+```
+
+- [Assignment 1](assignments/assignment_01/)
+- [Labs 1–5](labs/)
+- [Lab 6 source, brief, and dataset](labs/lab_06/)
+- [Lab 7 source and brief](labs/lab_07/)
+
+Use Python 3 to run the scripts. Lab 6 requires pandas and reads `data/eukaryotes.tsv` by default; an alternate TSV path may be supplied as the first command-line argument. Install pandas with `python -m pip install pandas` if needed.
 
 ---
 
@@ -31,7 +45,7 @@ As the course progresses, this repository will be updated with additional labs, 
 
 ### 1. Molarity Calculator
 
-**File:** `Lab_1_MolarityCalculator.py`
+**File:** [`interactive_molarity_calculator.py`](labs/lab_01/interactive_molarity_calculator.py)
 
 #### Objective
 
@@ -70,7 +84,7 @@ This exercise demonstrates how Python can automate routine scientific calculatio
 
 ### 2. Complementary DNA Sequence
 
-**File:** `Lab_1_ComplementaryDNA.py`
+**File:** [`complementing_dna.py`](labs/lab_01/complementing_dna.py)
 
 #### Objective
 
@@ -120,7 +134,7 @@ Understanding nucleotide complementarity is important for applications involving
 
 ### 3. Managing Patient Records Using Python Lists
 
-**File:** `Lab_2_Patient_Data_Management.py`
+**File:** [`patient_data_management.py`](labs/lab_02/patient_data_management.py)
 
 #### Objective
 
@@ -186,7 +200,7 @@ This exercise provides foundational experience with data organization and manipu
 
 ### 1. Dynamic Protocol Calculator
 
-**File:** `dynamic_protocol.py`
+**File:** [`dynamic_protocol.py`](labs/lab_03/dynamic_protocol.py)
 
 #### Objective
 
@@ -263,6 +277,8 @@ Implementing exception handling also improves the reliability of laboratory soft
 ---
 
 ## Assignment 1
+
+**Files:** [assignment source](assignments/assignment_01/assignment_01_calc_daltons.py) and [assignment brief](assignments/assignment_01/assignment_01_brief.pdf).
 
 ### Instructions
 
@@ -396,7 +412,7 @@ These foundational skills support my continued development in bioinformatics, co
 
 ### 1. Searching for DNA Sequence Patterns
 
-**Suggested File:** `Lab_4_DNAPatternSearch.py`
+**File:** [`dna_sequence_patterns.py`](labs/lab_04/dna_sequence_patterns.py)
 
 #### Objective
 
@@ -529,20 +545,31 @@ By combining pattern matching, reverse complement analysis, and reusable functio
 
 ## 🧪 Lab 5: DNA Transcription and Translation
 
-`NM_Lab_5_Translating_DNA.py` accepts a DNA sequence, validates its bases, transcribes DNA to RNA, and translates RNA codons into a protein sequence using a codon table. Assertions cover valid and invalid bases, lowercase input, stop codons, incomplete codons, and empty input.
+[`dna_transcription_translation.py`](labs/lab_05/dna_transcription_translation.py) accepts a DNA sequence, validates its bases, transcribes DNA to RNA, and translates RNA codons into a protein sequence using a codon table.
+
+## 🧪 Lab 6: Eukaryote Genome Data Analysis
+
+**Files:** [analysis script](labs/lab_06/eukaryotes_analysis.py), [input dataset](labs/lab_06/data/eukaryotes.tsv), and [lab brief](labs/lab_06/lab_06_brief.pdf).
+
+The script loads genome metadata with pandas, summarizes dataset structure and missingness, applies genome-size and protein-to-gene filters, and reports large fungal genomes.
+
+## 🧪 Lab 7: Accession-Name Pattern Matching
+
+**Files:** [regular-expression script](labs/lab_07/accession_name_patterns.py) and [lab brief](labs/lab_07/lab_07_brief.pdf).
+
+The exercise uses regular expressions to detect digits, ordered character matches, and accession suffix patterns.
 
 ---
 
 ## 🚀 Future Development
 
-This repository will continue to expand as I progress through the course.
+This repository will continue to expand as additional assignments and labs are completed.
 
 Future additions will include:
 
 - Additional Python programming labs
 - Bioinformatics assignments
 - More advanced biological data processing
-- Final course project
 
 ---
 
